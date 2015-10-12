@@ -1,0 +1,16 @@
+<h1>Wikipages</h1>
+
+<h3>Business Categories:</h3>
+<% if @types.length != 0 %>
+  <ul>
+  <% @types.each do |type| %>
+    <li>
+      <%= link_to type.name, type_path(type) %> |
+      <%= link_to 'Delete', type_path(type), :method => :destroy %> |
+      <%= link_to 'Edit', edit_type_path(type) %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= link_to 'Add a New Business Type', new_type_path %>

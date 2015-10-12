@@ -1,0 +1,11 @@
+<h3><%= @type.name %></h3>
+
+<% if @type.businesses.any? %>
+  <ul>
+    <% @type.businesses.each do |business| %>
+      <li><%= link_to business.name, business_path(business) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to 'Home', types_path %>
